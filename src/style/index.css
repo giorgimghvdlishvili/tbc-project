@@ -1,0 +1,61 @@
+:root {
+    --header-black: #1a1e1f;
+    --main-black-primary: #2b2b2b;
+    --main-black-secondary: #161616;
+    --white-primary: #f4f4f4;
+    --blue-primary: #00a3e0;
+    /* TODO: add footer bg color */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: 'TBC';
+    src:  url('../../fonts/TBC-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'TBC';
+    src:  url('../../fonts/TBC-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'TBC';
+    src:  url('../../fonts/TBC-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'TBCC';
+    src:  url('../../fonts/TBCC-Bold.ttf');
+}
+
+body {
+    color: var(--white-primary);
+    font-family: TBC;
+}
+
+main {
+    padding-top: 84px;
+}
+
+main section:nth-child(2n + 1) {
+    background: var(--main-black-primary);
+}
+
+main section:nth-child(2n + 0) {
+    background: var(--main-black-secondary);
+}
+
+a {
+    text-decoration: none;
+    color: var(--blue-primary);
+    cursor: pointer;
+}

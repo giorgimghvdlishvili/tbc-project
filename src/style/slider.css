@@ -1,0 +1,129 @@
+.slider-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.slider-container h3 {
+    font-size: 20px;
+    padding: 20px 0;
+    margin: auto;
+}
+
+.slide {
+    margin: auto;
+}
+
+.slide div{
+    width: fit-content;
+    margin: auto;
+    padding: 30px 0;
+}
+
+.partners-logos {
+    min-height: 370px;
+    width: 100%;
+}
+
+.slide[data-isActive="true"] {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    animation-timing-function: linear;
+    animation: showSlide 3s forwards;
+}
+
+.slide[data-isActive="false"] {
+    display: none;
+    animation-timing-function: linear;
+    animation: hideSlide 2s forwards;
+}
+
+.slider-controlls {
+    display: flex;
+    width: 100%;
+}
+
+.slider-arrows {
+    display: none;
+}
+
+.slider-points {
+    display: flex;
+    width: 60px;
+    justify-content: space-between;
+    margin: auto;
+    transform: translateY(-20px);
+}
+
+.slider-points span {
+    width: 7px;
+    height: 7px;
+    background-color: #e8e6e6;
+    border-radius: 100%;
+}
+
+.slider-arrows {
+    width: 1200px;
+    position: absolute;
+    left:0;
+    right:0;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    justify-content: space-between;
+    transform: translateY(-120px);
+}
+
+.slider-arrow {
+    width: 18px;
+    height: 36px;
+    cursor: pointer;
+}
+
+.slider-arrow.right {
+    transform: rotate(180deg);
+}
+
+@keyframes hideSlide {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes showSlide {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@media screen and (min-width: 1080px){
+    .partners-logos {
+        min-height: 225px;
+        width: 980px;
+        margin: auto;
+        padding: 30px 0;
+    }
+
+    .slide[data-isActive="true"] {
+        display: flex;
+        flex-direction: row;
+        width: 980px;
+    }
+
+    .slide div img{
+        margin: 0;
+    }
+
+    .slide div {
+        width: fit-content;
+    }
+
+    .slider-arrows {
+        display: flex;
+    }
+
+    .slider-container h3 {
+        width: 980px;
+        font-size: 24px;
+        margin-top: 30px;
+    }
+}

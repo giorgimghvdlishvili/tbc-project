@@ -1,0 +1,217 @@
+header {
+    width: 100%;
+    height: 84px;
+    position: fixed;
+    background-color: var(--header-black);
+    transition: 0.2s ease-in;
+}
+
+header.transparent-header {
+    opacity: 0.9;
+}
+
+header.hidden {
+    transform: translateY(-100%);
+}
+
+.header.visible {
+    transition: transform 0.5s ease-out;
+    transform: translateY(0);
+}
+
+.menu {
+    display: none;
+}
+
+.menu-mobile {
+    position: absolute;
+    right: 0;
+}
+
+.header-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto 24px;
+}
+
+.header-container div {
+    margin: auto 0;
+}
+
+.logo {
+    width: 160px;
+    height: 36px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+nav a {
+    color: var(--white-primary);
+    padding: 0 24px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.5s ease;
+    font-family: TBC;
+}
+
+nav a.active, nav a:hover{
+    color: var(--blue-primary);
+}
+
+/* 
+ * Start Hamburger menu icon 
+ */
+.menu-icon {
+    width: 32px;
+    height: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 500ms ease-out;
+}
+
+.menu-icon-container {
+    position: absolute;
+    transform: translate(-100%, -50%);
+    z-index: 10;
+}
+
+.menu-icon.open {
+    transform: rotate(-45deg);  
+}
+
+.line-menu {
+    background-color: #dbdbdb;
+    border-radius: 1.5px;
+    width: 100%;
+    height: 3px;
+}
+
+.line-menu.half {
+    width: 50%;
+}
+
+.line-menu.start {
+    transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+    transform-origin: right;
+}
+
+.open .line-menu.start {
+    transform: rotate(-90deg) translateX(6px);
+}
+
+.line-menu.end {
+    align-self: flex-end;
+    transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+    transform-origin: left;
+}
+
+.open .line-menu.end {
+    transform: rotate(-90deg) translateX(-6px);
+}
+  
+.open .line-menu {
+    background-color: #767676;
+}
+/* 
+ * End Hamburger menu icon
+ */
+
+
+
+
+/* 
+ * Start Mobile menu container
+ */
+ .menu-mobile {
+    position: absolute;
+    display: none;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;   
+}
+
+.menu-mobile .menu-container {
+    position: absolute;
+    right: 0;
+    width: 62%;
+    height: 100%;
+    background-color: #222222;
+    opacity: 1;
+    z-index: 10;
+}
+
+.menu-container nav {
+    margin-top: 110px;
+    display: flex;
+    gap: 33px;
+    flex-direction: column;
+}
+
+.menu-container nav a {
+    width: auto;
+    font-size: 18px;
+    padding-top: 10px;
+    text-align: end;
+    font-family: TBC;
+    font-weight: medium;
+    letter-spacing: 0;
+}
+
+.menu-mobile .cover {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: #222222;
+    opacity: 0.3;
+}
+
+.menu-mobile.open {
+    display: block;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+/* 
+ * End Mobile menu container
+ */
+
+@media screen and (min-width: 1080px){
+    header {
+        height: 84px;
+        padding: 0;
+    }
+
+    header.hidden {
+        transform: translateY(0);
+    }
+
+    .header-container {
+        width: 980px;
+        margin: auto;
+    }
+
+    .logo {
+        width: 182px;
+        height: 40px;
+    }
+
+    .menu {
+        display: flex;
+    }
+
+    .menu-mobile {
+        display: none;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+}
